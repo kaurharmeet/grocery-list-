@@ -1,0 +1,25 @@
+<div class="shoppinglist"  ng-controller="grocerylistController">
+
+    <div class="form-group" ng-submit="additem()">
+        <h2>ToDos</h2>
+
+        <h2>What needs to be done?</h2>
+        <input id="toggle-all" type="checkbox" ng-model="allchecked" ng-click="markall(allchecked)"  class="ng-pristine ng-valid">
+      </input>
+        <input text="text" placeholder="item"></input>
+        <button type="submit" class="btn btn-default" ng-click="goToGroceryList()">add item</button>
+
+    </div>
+    <li ng-repeat='item in items' ng-class="shoppinglist" class="ng-scope"></li>
+
+
+  <footer>
+      <ul class="nav navbar-nav navbar-left"  id="filters">
+           <li><a ng-class="{selected: status == ''} " href="#/">all</a></li>
+           <li><a ng-class="{selected: status == 'active'} " href="#/active">Active</a></li>
+           <li><a  ng-class="{selected: status == 'completed'} "href="#/completed">completed</a></li>
+           <li><a  ng-class="{selected: status == 'clear completed'} " href="#/clear completed">clear completed</a></li>
+
+      </ul>
+    </footer>
+  </div>
